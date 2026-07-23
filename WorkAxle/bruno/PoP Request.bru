@@ -1,0 +1,19 @@
+meta {
+  name: PoP Request
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{apiBaseUrl}}/api/pop/{{request_id}}
+  body: none
+  auth: none
+}
+
+headers {
+  ~Origin: http://localhost:9292
+}
+
+vars:pre-request {
+  request_id: e6ded207-3bff-4b7a-bc6a-721a5f031a7d
+}

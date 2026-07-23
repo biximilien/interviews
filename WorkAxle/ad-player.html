@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ad Player Demo</title>
+
+    <style>
+      html,
+      body {
+        background-color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      #player {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        overflow: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="player"></div>
+
+    <script>
+      const player = document.getElementById("player");
+      let timer;
+      let playingAd = false;
+      let adTimeout;
+      let adDuration; // Duration of the ad in seconds
+
+      const getAd = () => {
+        fetch("http://localhost:9292/api/ad_request", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Origin: "http://localhost:9292",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => data.ad)
+          .then((ad) => {
+            const adUrl = ad.asset.url;
+            adDuration = ad.asset.duration;
+            playingAd = true;
+            adTimeout = setTimeout(
+              () => {
+                playingAd = false;
+                clearAd();
+                popAd(ad.id);
+              },
+              adDuration * 1000 - 50
+            ); // Convert seconds to milliseconds
+
+            // Create a new image element
+            const img = new Image();
+            img.src = adUrl;
+
+            // Append the image to the player
+            player.appendChild(img);
+          })
+          .catch((error) => console.error("Error fetching ad:", error));
+      };
+
+      const clearAd = () => {
+        // Clear the player
+        player.innerHTML = "";
+      };
+
+      const popAd = (requestId) => {
+        setTimeout(() => {
+          fetch("http://localhost:9292/api/pop/" + requestId, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Origin: "http://localhost:9292",
+            },
+          })
+            .then(() => {
+              console.log("Ad PoP'd!");
+            })
+            .catch((error) => console.error("Error pop'ing ad:", error));
+        }, 500);
+      };
+
+      window.onload = function () {
+        timer = setInterval(() => {
+          if (!playingAd) {
+            getAd();
+          }
+        }, 5000); // main loop is on a 5 second period
+      };
+    </script>
+  </body>
+</html>

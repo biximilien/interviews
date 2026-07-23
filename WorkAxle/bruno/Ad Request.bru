@@ -1,0 +1,15 @@
+meta {
+  name: Ad Request
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{apiBaseUrl}}/api/ad_request
+  body: none
+  auth: none
+}
+
+headers {
+  ~Origin: http://localhost:9292
+}
