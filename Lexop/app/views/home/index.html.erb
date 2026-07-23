@@ -1,0 +1,13 @@
+<div class="container" data-controller="news">
+    <form>
+        <label for="authors">Author</label>
+        <select name="authors" data-news-target="authors" data-action="change->news#filterAuthors"></select>
+        <label for="categories">Category</label>
+        <select name="categories" data-news-target="categories" data-action="change->news#filterCategories"></select>
+    </form>
+    <div data-news-target="container"></div>
+    <div class="align-right">
+        <button class="button" id="previous-page" data-action="click->news#previousPage">Previous</button>
+        <button class="button" id="next-page" data-action="click->news#nextPage">Next</button>
+    </div>
+</div>
