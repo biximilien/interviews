@@ -1,0 +1,67 @@
+#home {
+  // make container at least full height
+  min-height: 100%;
+  @include desktop {
+    min-height: calc(100vh - #{$navbar-height});
+  }
+
+  section.hero {
+    // set a cliché looking, but somewhat nice, background
+    background-image: image-url('hero-bg.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    @include mobile {
+      background-position: 25% 25%;
+    }
+
+    // changes the stripes color
+    .hero-body {
+      color: rgba($black, 0.33);
+    }
+
+    // hero caption color
+    h1.title, h2.subtitle {
+      color: $secondary;
+    }
+
+    // give some meat to our title
+    h1.title {
+      font-size: 3.5rem;
+      @include desktop {
+        font-size: 6rem;
+      }
+      font-weight: bolder;
+    }
+
+    // and his little brother
+    h2.subtitle {
+      font-size: 2rem;
+      @include desktop {
+        font-size: 3rem;
+      }
+      font-weight: bold;
+
+      // diagonal align with stripes
+      padding-left: 2.5rem;
+      @include desktop {
+        padding-left: 3.5rem;
+      }
+    }
+
+    .buttons {
+      // diagonal align with stripes
+      padding-left: 5rem;
+      @include desktop {
+        padding-left: 7rem;
+      }
+
+      // make it better!
+      .button {
+        color: $white;
+        background-color: $secondary;
+        border-radius: 0;
+        padding: 1.5rem 3.5rem;
+      }
+    }
+  }
+}
