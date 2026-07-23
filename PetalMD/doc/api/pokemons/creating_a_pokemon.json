@@ -1,0 +1,140 @@
+{
+  "resource": "Pokemons",
+  "resource_explanation": "Pokemons resource",
+  "http_method": "POST",
+  "route": "/api/pokemons",
+  "description": "Creating a pokemon",
+  "explanation": null,
+  "parameters": [
+    {
+      "scope": "pokemon",
+      "required": true,
+      "type": "integer",
+      "name": "number",
+      "description": "Pokemon's Number"
+    },
+    {
+      "scope": "pokemon",
+      "required": true,
+      "type": "string",
+      "name": "name",
+      "description": "Pokemon's Name"
+    },
+    {
+      "scope": "pokemon",
+      "required": true,
+      "type": "string",
+      "name": "type_1",
+      "description": "Pokemon's Type 1"
+    },
+    {
+      "scope": "pokemon",
+      "required": false,
+      "type": "string",
+      "name": "type_2",
+      "description": "Pokemon's Type 2"
+    },
+    {
+      "scope": "pokemon",
+      "required": true,
+      "type": "integer",
+      "name": "total",
+      "description": "Pokemon's total"
+    },
+    {
+      "scope": "pokemon",
+      "required": true,
+      "type": "integer",
+      "name": "hp",
+      "description": "Pokemon's HP"
+    },
+    {
+      "scope": "pokemon",
+      "required": true,
+      "type": "integer",
+      "name": "attack",
+      "description": "Pokemon's Attack"
+    },
+    {
+      "scope": "pokemon",
+      "required": true,
+      "type": "integer",
+      "name": "defense",
+      "description": "Pokemon's Defense"
+    },
+    {
+      "scope": "pokemon",
+      "required": true,
+      "type": "integer",
+      "name": "sp_atk",
+      "description": "Pokemon's Sp. Atk."
+    },
+    {
+      "scope": "pokemon",
+      "required": true,
+      "type": "integer",
+      "name": "sp_def",
+      "description": "Pokemon's Sp. Def."
+    },
+    {
+      "scope": "pokemon",
+      "required": true,
+      "type": "integer",
+      "name": "speed",
+      "description": "Pokemon's Speed"
+    },
+    {
+      "scope": "pokemon",
+      "required": true,
+      "type": "integer",
+      "name": "generation",
+      "description": "Pokemon's Generation"
+    },
+    {
+      "scope": "pokemon",
+      "required": true,
+      "type": "boolean",
+      "name": "legendary",
+      "description": "Pokemon is legendary"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/pokemons",
+      "request_body": "pokemon[number]=722&pokemon[name]=Pikablu&pokemon[type_1]=Water&pokemon[type_2]=Electric&pokemon[total]=600&pokemon[hp]=100&pokemon[attack]=100&pokemon[defense]=100&pokemon[sp_atk]=100&pokemon[sp_def]=100&pokemon[speed]=100&pokemon[generation]=1&pokemon[legendary]=true",
+      "request_headers": {
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "[binary data]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Location": "http://example.org/api/pokemons/808",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"2061360308365436ca2f2a26c03040a3\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "76bbe4aa-cc5d-4790-91c8-cd2b5a041a63",
+        "X-Runtime": "0.028392",
+        "Vary": "Origin",
+        "Content-Length": "275"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

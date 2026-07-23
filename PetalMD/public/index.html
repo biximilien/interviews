@@ -1,0 +1,179 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Interview PetalMD - Pokemons</title>
+  <meta name="description" content="A simple CRUD api with pokemons">
+  <meta name="author" content="Maxime 'biximilien' Gauthier">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script
+			  src="https://code.jquery.com/jquery-3.5.1.min.js"
+			  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			  crossorigin="anonymous"></script>
+
+  <style type="text/css">
+    html {
+      background-color: #82cafa;
+    }
+
+    input::placeholder {
+      color: black !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero is-info">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Pokemons API</h1>
+
+        <p>
+          This project allows the user to browse Pokemons through an API and
+          query the list using a simple search.
+        </p>
+
+        <p>
+          This project is submitted as an interview exercise for PetalMD by
+          <author class="is-italic">Maxime 'biximilien' Gauthier</author>.
+        </p>
+
+        <hr>
+
+        <p class="box">
+          Read the API <a href="/api/docs" class="has-text-strong">documentation</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container has-text-light">
+      <h1 class="title has-text-light">Example</h1>
+
+      <p>
+        This sample application demonstrates the API CRUD actions with a table
+        backed with the API.
+      </p>
+
+      <p>
+        Query for Pokemons using the Search feature bellow.
+      </p>
+
+      <br>
+
+      <div class="box">
+        <form onsubmit="updatePokes(this);">
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Search</label>
+            </div>
+            <div class="field-body">
+              <div class="field is-grouped">
+                <div class="control is-expanded">
+                  <input type="text" name="q" class="input">
+                </div>
+                <div class="control">
+                  <input type="submit" value="Search" class="button is-info">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <br>
+
+      <table id="pokemons-table" class="table is-striped is-fullwidth">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Type 1</th>
+            <th>Type 2</th>
+            <th>Total</th>
+            <th>HP</th>
+            <th>Attack</th>
+            <th>Defense</th>
+            <th>Sp. Atk.</th>
+            <th>Sp. Def.</th>
+            <th>Speed</th>
+            <th>Generation</th>
+            <th>Legendary</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        </tbody>
+
+        <tfoot>
+          <form onsubmit="createPoke(this)">
+            <tr>
+              <td>
+                <input type="text" name="pokemon[number]" placeholder="#" class="input is-small">
+              </td>
+              <td>
+                <input type="text" name="pokemon[name]" placeholder="Name" class="input is-small">
+              </td>
+              <td>
+                <input type="text" name="pokemon[type_1]" placeholder="Type 1" class="input is-small">
+              </td>
+              <td>
+                <input type="text" name="pokemon[type_2]" placeholder="Type 2" class="input is-small">
+              </td>
+              <td>
+                <input type="text" name="pokemon[total]" placeholder="Total" class="input is-small">
+              </td>
+              <td>
+                <input type="text" name="pokemon[hp]" placeholder="HP" class="input is-small">
+              </td>
+              <td>
+                <input type="text" name="pokemon[attack]" placeholder="Attack" class="input is-small">
+              </td>
+              <td>
+                <input type="text" name="pokemon[defense]" placeholder="Defense" class="input is-small">
+              </td>
+              <td>
+                <input type="text" name="pokemon[sp_atk]" placeholder="Sp. Atk." class="input is-small">
+              </td>
+              <td>
+                <input type="text" name="pokemon[sp_def]" placeholder="Sp. Def." class="input is-small">
+              </td>
+              <td>
+                <input type="text" name="pokemon[speed]" placeholder="Speed" class="input is-small">
+              </td>
+              <td>
+                <input type="text" name="pokemon[generation]" placeholder="Generation" class="input is-small">
+              </td>
+              <td>
+                <input type="text" name="pokemon[legendary]" placeholder="Legendary" class="input is-small">
+              </td>
+              <td>
+                <input type="submit" value="Create" class="button is-info is-small">
+              </td>
+            </tr>
+          </form>
+        </tfoot>
+      </table>
+
+      <div id="pagination-box" class="box">
+        <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+          <a class="pagination-previous">Previous</a>
+          <a class="pagination-next">Next page</a>
+          <ul class="pagination-list">
+            <li><a class="pagination-link" aria-label="Goto page 1" onclick="goToPage(1)">1</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <script src="main.js" charset="utf-8" type="text/javascript"></script>
+</body>
+</html>

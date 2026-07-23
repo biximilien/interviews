@@ -1,0 +1,56 @@
+{
+  "resource": "Pokemons",
+  "resource_explanation": "Pokemons resource",
+  "http_method": "GET",
+  "route": "/api/pokemons",
+  "description": "Listing Pokemons on page 7",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "page",
+      "description": "Page to view"
+    },
+    {
+      "name": "q",
+      "description": "Search query"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/pokemons?page=7",
+      "request_body": null,
+      "request_headers": {
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "page": "7"
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[binary data]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"c2a9d25432dc6d573233041260cece62\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "56cb30f8-a78e-4bf9-80f7-6e739e4f5577",
+        "X-Runtime": "0.019572",
+        "Vary": "Origin",
+        "Content-Length": "13516"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

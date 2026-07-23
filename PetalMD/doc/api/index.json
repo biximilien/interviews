@@ -1,0 +1,66 @@
+{
+  "resources": [
+    {
+      "name": "Pokemons",
+      "explanation": "Pokemons resource",
+      "examples": [
+        {
+          "description": "Creating a pokemon",
+          "link": "pokemons/creating_a_pokemon.json",
+          "groups": "all",
+          "route": "/api/pokemons",
+          "method": "post"
+        },
+        {
+          "description": "Deleting a Pokemon",
+          "link": "pokemons/deleting_a_pokemon.json",
+          "groups": "all",
+          "route": "/api/pokemons/151",
+          "method": "delete"
+        },
+        {
+          "description": "Listing Pokemons",
+          "link": "pokemons/listing_pokemons.json",
+          "groups": "all",
+          "route": "/api/pokemons",
+          "method": "get"
+        },
+        {
+          "description": "Listing Pokemons by search query",
+          "link": "pokemons/listing_pokemons_by_search_query.json",
+          "groups": "all",
+          "route": "/api/pokemons",
+          "method": "get"
+        },
+        {
+          "description": "Listing Pokemons on page 7",
+          "link": "pokemons/listing_pokemons_on_page_7.json",
+          "groups": "all",
+          "route": "/api/pokemons",
+          "method": "get"
+        },
+        {
+          "description": "Retrieve a Pokemon by id",
+          "link": "pokemons/retrieve_a_pokemon_by_id.json",
+          "groups": "all",
+          "route": "/api/pokemons/1",
+          "method": "get"
+        },
+        {
+          "description": "Updating a Pokemon",
+          "link": "pokemons/updating_a_pokemon.json",
+          "groups": "all",
+          "route": "/api/pokemons/1",
+          "method": "put"
+        },
+        {
+          "description": "Updating a Pokemon",
+          "link": "pokemons/updating_a_pokemon.json",
+          "groups": "all",
+          "route": "/api/pokemons/1",
+          "method": "patch"
+        }
+      ]
+    }
+  ]
+}

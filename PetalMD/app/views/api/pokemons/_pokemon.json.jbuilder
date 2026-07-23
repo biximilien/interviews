@@ -1,0 +1,14 @@
+json.id pokemon.id
+json.number pokemon.number
+json.name pokemon.name
+json.type_1 pokemon.type_1
+json.type_2 pokemon.type_2
+json.total pokemon.total
+json.hp pokemon.hp
+json.attack pokemon.attack
+json.defense pokemon.defense
+json.sp_atk pokemon.sp_atk
+json.sp_def pokemon.sp_def
+json.speed pokemon.speed
+json.generation pokemon.generation
+json.legendary pokemon.legendary
